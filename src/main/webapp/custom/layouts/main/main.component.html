@@ -1,0 +1,15 @@
+<router-outlet name="navbar" *ngIf="account !== null"></router-outlet>
+
+<router-outlet name="menu" *ngIf="account !== null"></router-outlet>
+
+<div class="app-content content" [class.ml-0]="account === null" [class.pt-0]="account === null">
+  <jhi-alert></jhi-alert>
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow" *ngIf="account !== null"></div>
+  <router-outlet></router-outlet>
+</div>
+
+<div class="sidenav-overlay" style="z-index: 1051"></div>
+<div class="drag-target"></div>
+
+<router-outlet name="footer" *ngIf="account !== null"></router-outlet>
