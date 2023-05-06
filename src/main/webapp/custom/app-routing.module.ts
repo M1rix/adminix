@@ -8,6 +8,7 @@ import { DEBUG_INFO_ENABLED } from 'app/app.constants';
 
 import { Authority } from 'app/config/authority.constants';
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
+import {menuRoute} from "./layouts/menu/menu.route";
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { UserRouteAccessService } from 'app/core/auth/user-route-access.service'
           loadChildren: () => import(`./entities/entity-routing.module`).then(m => m.EntityRoutingModule),
         },
         navbarRoute,
+        menuRoute,
         footerRoute,
         ...errorRoute,
       ],

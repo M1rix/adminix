@@ -4,7 +4,7 @@ import { Router, ActivatedRouteSnapshot, NavigationEnd } from '@angular/router';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import * as dayjs from 'dayjs';
 
-import { AccountService } from 'app/core/auth/account.service';
+import { AccountService } from 'custom/core/auth/account.service';
 import { Account } from 'app/core/auth/account.model';
 
 @Component({
@@ -27,7 +27,13 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     // try to log in automatically
-    this.accountService.identity().subscribe();
+    this.accountService.identity().subscribe(
+      res => {
+        if(!res){
+          this.router.navigate(['/login'])
+        }
+      }
+    );
     this.accountService.getAuthenticationState().subscribe(account => (this.account = account));
 
     this.router.events.subscribe(event => {

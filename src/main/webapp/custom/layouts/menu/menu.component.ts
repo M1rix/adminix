@@ -13,10 +13,10 @@ import { EntityNavbarItems } from 'app/entities/entity-navbar-items';
 
 @Component({
   selector: 'jhi-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss'],
 })
-export class NavbarComponent implements OnInit {
+export class MenuComponent implements OnInit {
   inProduction?: boolean;
   isNavbarCollapsed = true;
   languages = LANGUAGES;
@@ -24,8 +24,6 @@ export class NavbarComponent implements OnInit {
   version = '';
   account: Account | null = null;
   entitiesNavbarItems: any[] = [];
-
-  userName = '';
 
   constructor(
     private loginService: LoginService,
@@ -49,7 +47,6 @@ export class NavbarComponent implements OnInit {
 
     this.accountService.getAuthenticationState().subscribe(account => {
       this.account = account;
-      this.setUserName();
     });
   }
 
@@ -74,28 +71,5 @@ export class NavbarComponent implements OnInit {
 
   toggleNavbar(): void {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
-  }
-
-  private setUserName(): void {
-    const firstName = this.account!.firstName ?? '';
-    const lastName = this.account!.lastName ?? '';
-    const email = this.account!.email;
-    const login = this.account!.login;
-
-    if (!this.isBlank(firstName) && !this.isBlank(lastName)) {
-      this.userName = `${lastName} ${firstName.substring(0, 1).toUpperCase()}`;
-    } else if (!this.isBlank(firstName)) {
-      this.userName = firstName;
-    } else if (!this.isBlank(lastName)) {
-      this.userName = lastName;
-    } else if (!this.isBlank(email)) {
-      this.userName = email;
-    } else if (!this.isBlank(login)) {
-      this.userName = login;
-    }
-  }
-
-  private isBlank(str?: string | null): boolean {
-    return !str || str.trim().length === 0;
   }
 }
