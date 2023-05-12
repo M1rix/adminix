@@ -1,0 +1,11 @@
+{
+  "adminixApp": {
+    "OrderStatus": {
+      "null": "",
+      "AVAILABLE": "Available",
+      "IN_PROGRESS": "In progress",
+      "INVOICED": "Invoiced",
+      "COMPLETED": "Completed"
+    }
+  }
+}

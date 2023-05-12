@@ -12,7 +12,7 @@ import { ProfileService } from 'app/layouts/profiles/profile.service';
 import { EntityNavbarItems } from 'app/entities/entity-navbar-items';
 
 @Component({
-  selector: 'jhi-navbar',
+  selector: 'jhi-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
 })

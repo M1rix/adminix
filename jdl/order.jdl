@@ -1,0 +1,15 @@
+entity Order {
+    width Integer
+    height Integer
+    status OrderStatus required
+    fileName String maxlength(255)
+    comment String maxlength(255)
+    createdBy String maxlength(50) required
+    createdDate Instant
+    lastModifiedBy String maxlength(50)
+    lastModifiedDate Instant
+}
+
+enum OrderStatus {
+    AVAILABLE, IN_PROGRESS, INVOICED, COMPLETED
+}

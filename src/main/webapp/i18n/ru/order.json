@@ -1,0 +1,32 @@
+{
+  "adminixApp": {
+    "order": {
+      "home": {
+        "title": "Orders",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Order",
+        "createOrEditLabel": "Создать или отредактировать Order",
+        "notFound": "Orders не найдено"
+      },
+      "created": "Новый Order создан с идентификатором {{ param }}",
+      "updated": "Order обновлен с идентификатором {{ param }}",
+      "deleted": "Order удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Order {{ id }}?"
+      },
+      "detail": {
+        "title": "Order"
+      },
+      "id": "ID",
+      "width": "Width",
+      "height": "Height",
+      "status": "Status",
+      "fileName": "File Name",
+      "comment": "Comment",
+      "createdBy": "Created By",
+      "createdDate": "Created Date",
+      "lastModifiedBy": "Last Modified By",
+      "lastModifiedDate": "Last Modified Date"
+    }
+  }
+}
